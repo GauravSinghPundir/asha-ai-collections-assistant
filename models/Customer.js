@@ -1,0 +1,71 @@
+const mongoose=require("mongoose");
+
+const customerSchema = new mongoose.Schema({
+    customer_name:{
+        type:String,
+        required:true,
+        trim:true
+    }, 
+    customer_id:{
+        type:String,
+        required:true,
+        unique:true,
+        trim:true
+    },
+    customer_email:{
+        type:String,
+        required:true,  
+        default:"",
+        trim:true
+    },
+    customer_phone:{
+        type:String,
+        required:true,
+    },
+    remark:{
+        type:String,
+        default:""
+    },
+    done:{
+        type:Boolean,
+        default:false
+    },
+    status:{
+        type:String,
+        enum:["queued","processing","done","escalated"],
+        default:"queued"
+    },
+    summary:{
+        type:String,
+        defualt:""
+    },
+    outcome:{
+        type:String,
+        default:""
+    },
+    next_step:{
+        type:String,
+        default:""
+    },
+    sentiment:{
+        type:String,
+        default:""
+    },
+    needs_human:{
+        type:Boolean,
+        default:false
+    },
+    distress:{
+        type:Boolean,
+        default:false
+    },
+    promise_date:{
+        type:Date,
+        default:null 
+    }
+},{
+    timestamps:true
+}
+);
+
+module.exports=mongoose.model("Customer",customerSchema);

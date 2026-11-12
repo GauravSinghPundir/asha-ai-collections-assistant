@@ -1,0 +1,4 @@
+customer_name,customer_id,remark,customer_email,customer_phone
+Rahul Sharma,C001,Payment pending,rahul@example.com,9876543210
+Priya Verma,C002,Salary delay,priya@example.com,9876543211
+Amit Kumar,C003,Promised payment next week,amit@example.com,9876543212
